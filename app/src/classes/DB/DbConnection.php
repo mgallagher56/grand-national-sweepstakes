@@ -1,6 +1,6 @@
 <?php
 
-namespace marcsNameSpace\DbConnection;
+namespace marcsNameSpace\DB;
 
 Use PDO;
 

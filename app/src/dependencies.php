@@ -1,5 +1,8 @@
 <?php
 
+use MacsNameSpace\factories\ToDoModelFactory;
+use marcsNameSpace\DbConnection\DbConnection;
+use MarcsNameSpace\factories\GetAllToDoControllerFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -19,5 +22,9 @@ return function (App $app) {
         $logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
         return $logger;
     };
+
+    $container['DbConnection'] = new DbConnection();
+    $container['ToDoModel'] = new ToDoModelFactory();
+    $container['GetAllToDoController'] = new GetAllToDoControllerFactory();
 
 };

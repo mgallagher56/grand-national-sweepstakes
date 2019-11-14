@@ -1,5 +1,6 @@
 <?php
 
+use MarcsNameSpace\controllers\AddToDoController;
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -7,12 +8,9 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/', function (Request $request, Response $response, array $args) use ($container) {
-        // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/' route");
+    $app->get('/', 'GetAllToDoController');
+    $app->get('/add', 'AddToDoController');
+    $app->get('/update', 'UpdateToDoController');
 
-        // Render index view
-        return $container->get('renderer')->render($response, 'index.phtml', $args);
-    });
 
 };
