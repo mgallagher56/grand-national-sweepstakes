@@ -1,6 +1,7 @@
 <?php
 
 use MarcsNameSpace\factories\ToDoModelFactory;
+use MarcsNameSpace\factories\HomePageControllerFactory;
 use MarcsNameSpace\factories\UpdateToDoControllerFactory;
 use MarcsNameSpace\factories\DeleteToDoControllerFactory;
 use MarcsNameSpace\DB\DbConnection;
@@ -28,6 +29,7 @@ return function (App $app) {
     };
 
     $container['DbConnection'] = new DbConnection();
+    $container['HomePageController'] = new HomePageControllerFactory();
     $container['ToDoModel'] = new ToDoModelFactory();
     $container['GetAllToDoController'] = new GetAllToDoControllerFactory();
     $container['AddToDoController'] = new AddToDoControllerFactory();

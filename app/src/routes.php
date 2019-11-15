@@ -7,11 +7,12 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/', 'GetAllToDoController');
-    $app->post('/add', 'AddToDoController');
-    $app->post('/delete', 'DeleteToDoController');
-    $app->post('/update', 'UpdateToDoController');
-    $app->post('/complete', 'CompleteToDoController');
+    $app->get('/', 'HomePageController');
+    $app->get('/api/', 'GetAllToDoController');
+    $app->post('/api/add', 'AddToDoController');
+    $app->post('/api/delete', 'DeleteToDoController');
+    $app->post('/api/update', 'UpdateToDoController');
+    $app->post('/api/complete', 'CompleteToDoController');
 
 
 };
