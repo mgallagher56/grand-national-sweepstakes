@@ -9,9 +9,9 @@ class ToDoModel
 {
     private $db;
 
-    public function __construct(DbConnection $dbConnection)
+    public function __construct(PDO $db)
     {
-        $this->db = $dbConnection->getDb();
+        $this->db = $db;
     }
 
     public function getAllToDos(){
@@ -38,6 +38,18 @@ class ToDoModel
         $query = $this->db->prepare('UPDATE `ToDO` SET `task` = :task WHERE `id` = :id;');
         $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
         $query->bindParam(':task', $task, PDO::PARAM_STR, 256);
+        $query->execute();
+    }
+
+    public function completeToDo($id){
+        $query = $this->db->prepare('UPDATE `ToDO` SET `completed` = 1 WHERE `id` = :id;');
+        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
+        $query->execute();
+    }
+
+    public function restoreToDo( $id){
+        $query = $this->db->prepare('UPDATE `ToDO` SET `completed` = 0 WHERE `id` = :id;');
+        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
         $query->execute();
     }
 

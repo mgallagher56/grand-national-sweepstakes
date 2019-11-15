@@ -7,15 +7,9 @@ use Psr\Container\ContainerInterface;
 
 class GetAllToDoControllerFactory
 {
-    private $ToDoModel;
-
-    public function __construct(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container)
     {
-        $this->ToDoModel = $container->get('ToDoModel');
-    }
-
-    public function __invoke()
-    {
-        return new GetAllToDoController($this->ToDoModel);
+        $ToDoModel = $container->get('ToDoModel');
+        return new GetAllToDoController($ToDoModel);
     }
 }

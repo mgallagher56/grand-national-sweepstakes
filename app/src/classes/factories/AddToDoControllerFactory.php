@@ -2,15 +2,15 @@
 
 namespace MarcsNameSpace\factories;
 
-use MarcsNameSpace\models\ToDoModel;
+use MarcsNameSpace\controllers\AddToDoController;
 use Psr\Container\ContainerInterface;
 
 class AddToDoControllerFactory
 {
-    private $ToDoModel;
 
-    public function __construct(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container)
     {
-        $this->ToDoModel = $container->get('ToDoModel');
+        $ToDoModel= $container->get('ToDoModel');
+        return new AddToDoController($ToDoModel);
     }
 }

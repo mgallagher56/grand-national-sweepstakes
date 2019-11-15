@@ -1,8 +1,12 @@
 <?php
 
-use MacsNameSpace\factories\ToDoModelFactory;
-use marcsNameSpace\DbConnection\DbConnection;
+use MarcsNameSpace\factories\ToDoModelFactory;
+use MarcsNameSpace\factories\UpdateToDoControllerFactory;
+use MarcsNameSpace\factories\DeleteToDoControllerFactory;
+use MarcsNameSpace\DB\DbConnection;
 use MarcsNameSpace\factories\GetAllToDoControllerFactory;
+use MarcsNameSpace\factories\AddToDoControllerFactory;
+use MarcsNameSpace\factories\CompleteToDoControllerFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -26,5 +30,9 @@ return function (App $app) {
     $container['DbConnection'] = new DbConnection();
     $container['ToDoModel'] = new ToDoModelFactory();
     $container['GetAllToDoController'] = new GetAllToDoControllerFactory();
+    $container['AddToDoController'] = new AddToDoControllerFactory();
+    $container['DeleteToDoController'] = new DeleteToDoControllerFactory();
+    $container['UpdateToDoController'] = new UpdateToDoControllerFactory();
+    $container['CompleteToDoController'] = new CompleteToDoControllerFactory();
 
 };

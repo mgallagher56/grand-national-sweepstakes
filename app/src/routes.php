@@ -1,6 +1,5 @@
 <?php
 
-use MarcsNameSpace\controllers\AddToDoController;
 use Slim\App;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -9,8 +8,10 @@ return function (App $app) {
     $container = $app->getContainer();
 
     $app->get('/', 'GetAllToDoController');
-    $app->get('/add', 'AddToDoController');
-    $app->get('/update', 'UpdateToDoController');
+    $app->post('/add', 'AddToDoController');
+    $app->post('/delete', 'DeleteToDoController');
+    $app->post('/update', 'UpdateToDoController');
+    $app->post('/complete', 'CompleteToDoController');
 
 
 };

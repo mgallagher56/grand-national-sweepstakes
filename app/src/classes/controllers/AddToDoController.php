@@ -2,7 +2,6 @@
 
 namespace MarcsNameSpace\controllers;
 
-Use MarcsNameSpace\models\ToDoModel;
 
 class  AddToDoController
 {
@@ -16,7 +15,7 @@ class  AddToDoController
     public function __invoke($request, $response, $args)
     {
         $task = $request->getParam('task');
-        $this->ToDoModal->addToDo($task);
-        return $response->withRedirect('/', 200);
+        $this->ToDoModel->addToDo($task);
+        return $response->withRedirect('/');
     }
 }
