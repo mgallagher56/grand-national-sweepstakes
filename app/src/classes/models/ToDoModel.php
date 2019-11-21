@@ -29,32 +29,32 @@ class ToDoModel
     }
 
     public function addToDo($task){
-        $query = $this->db->prepare('INSERT INTO `ToDO`(task) VALUE (:task);');
+        $query = $this->db->prepare('INSERT INTO `ToDo`(task) VALUE (:task);');
         $query->bindParam(':task', $task, PDO::PARAM_STR);
         $query->execute();
     }
 
-    public function updateToDo($task, $id){
-        $query = $this->db->prepare('UPDATE `ToDO` SET `task` = :task WHERE `id` = :id;');
-        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
+    public function updateToDo($id, $task){
+        $query = $this->db->prepare('UPDATE `ToDo` SET `task` = :task WHERE `id` = :id;');
         $query->bindParam(':task', $task, PDO::PARAM_STR, 256);
+        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
         $query->execute();
     }
 
     public function completeToDo($id){
-        $query = $this->db->prepare('UPDATE `ToDO` SET `completed` = 1 WHERE `id` = :id;');
+        $query = $this->db->prepare('UPDATE `ToDo` SET `completed` = 1 WHERE `id` = :id;');
         $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
         $query->execute();
     }
 
     public function restoreToDo( $id){
-        $query = $this->db->prepare('UPDATE `ToDO` SET `completed` = 0 WHERE `id` = :id;');
+        $query = $this->db->prepare('UPDATE `ToDo` SET `completed` = 0 WHERE `id` = :id;');
         $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
         $query->execute();
     }
 
     public function deleteToDo($id){
-        $query = $this->db->prepare('DELETE FROM `ToDO` WHERE `id` = :id;');
+        $query = $this->db->prepare('DELETE FROM `ToDo` WHERE `id` = :id;');
         $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
         $query->execute();
     }
