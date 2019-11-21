@@ -15,7 +15,7 @@ class ToDoModel
     }
 
     public function getAllToDos(){
-        $query = $this->db->prepare('SELECT * FROM `ToDo` WHERE `completed` = 0;');
+        $query = $this->db->prepare('SELECT `id`, `task`, `completed` FROM `ToDo` WHERE `completed` = 0;');
         $query->execute();
         $result = $query->fetchAll();
         return $result;

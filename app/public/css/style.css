@@ -95,6 +95,18 @@ li {
     font-size: 2.5rem;
 }
 
+.Done {
+    text-align: left;
+}
+
+.Tasks {
+    left: 50%;
+}
+
 .id {
     display: none;
+}
+
+#newTask {
+    border-bottom: black 1px solid;
 }
