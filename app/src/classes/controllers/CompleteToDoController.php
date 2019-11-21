@@ -15,7 +15,8 @@ class CompleteToDoController
     {
         $id = $request->getparam('id');
         $id = intval($id);
+        $results = $this->ToDoModel->getAllToDos();
         $this->ToDoModel->completeToDo($id);
-        return $response->withRedirect('/', 200);
+        return $response->withJson($results, 200);
     }
 }

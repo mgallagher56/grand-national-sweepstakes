@@ -34,7 +34,7 @@ class ToDoModel
         $query->execute();
     }
 
-    public function updateToDo($id, $task){
+    public function updateToDo($task, $id){
         $query = $this->db->prepare('UPDATE `ToDo` SET `task` = :task WHERE `id` = :id;');
         $query->bindParam(':task', $task, PDO::PARAM_STR, 256);
         $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
@@ -43,19 +43,19 @@ class ToDoModel
 
     public function completeToDo($id){
         $query = $this->db->prepare('UPDATE `ToDo` SET `completed` = 1 WHERE `id` = :id;');
-        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
+        $query->bindParam(':id', $id, PDO::PARAM_INT,3 );
         $query->execute();
     }
 
     public function restoreToDo( $id){
         $query = $this->db->prepare('UPDATE `ToDo` SET `completed` = 0 WHERE `id` = :id;');
-        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
+        $query->bindParam(':id', $id, PDO::PARAM_INT,3);
         $query->execute();
     }
 
     public function deleteToDo($id){
         $query = $this->db->prepare('DELETE FROM `ToDo` WHERE `id` = :id;');
-        $query->bindParam(':id', $id, PDO::PARAM_INT, 3);
+        $query->bindParam(':id', $id, PDO::PARAM_INT,3);
         $query->execute();
     }
 

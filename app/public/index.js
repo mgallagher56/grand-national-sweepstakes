@@ -9,7 +9,6 @@ fetch(API_PATH + '/', {
     })
         .then(data => data.json())
         .then(function (data) {
-            console.log(data)
             const list = document.getElementById('list')
             document.getElementById('title').innerHTML += "<ul class='title'><li class='titles'>Done</li>" +
                 "<li class='titles'>Tasks</li></ul>"
@@ -55,6 +54,42 @@ fetch(API_PATH + '/', {
                 request.task = document.getElementById('task').value
                 request.id = document.getElementById('id').value
                 fetch(API_PATH + '/update', {
+                    method: 'POST', // your method
+                    headers: {
+                        'Content-Type': 'application/json' //REQUIRED
+                    },
+                    body: JSON.stringify(request)})// YOUR DATA
+                    .then(
+                        location.reload()
+                    )
+            })
+
+            document.getElementById('completed').addEventListener('click', function (e) {
+                e.preventDefault()
+                let request = {
+                    id: null
+                }
+
+            request.id = document.getElementById('id').value
+            fetch(API_PATH + '/complete', {
+                method: 'POST', // your method
+                headers: {
+                    'Content-Type': 'application/json' //REQUIRED
+                },
+                body: JSON.stringify(request)})// YOUR DATA
+                .then(
+                    location.reload()
+                )
+        })
+
+            document.getElementById('delete').addEventListener('click', function (e) {
+                e.preventDefault()
+                let request = {
+                    id: null
+                }
+
+                request.id = document.getElementById('id').value
+                fetch(API_PATH + '/delete', {
                     method: 'POST', // your method
                     headers: {
                         'Content-Type': 'application/json' //REQUIRED

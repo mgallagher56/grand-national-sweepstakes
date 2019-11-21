@@ -16,7 +16,8 @@ class UpdateToDoController
         $task = $request->getParam('task');
         $id = $request->getparam('id');
         $id = intval($id);
+        $results = $this->ToDoModel->getAllToDos();
         $this->ToDoModel->updateToDo($task, $id);
-        return $response->withRedirect('/', 200);
+        return $response->withJson($results, 200);
     }
 }
