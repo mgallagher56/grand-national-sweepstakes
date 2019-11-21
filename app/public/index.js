@@ -10,18 +10,18 @@ fetch(API_PATH + '/', {
         .then(data => data.json())
         .then(function (data) {
             const list = document.getElementById('list')
-            document.getElementById('title').innerHTML += "<ul class='title'><li class='titles Done'>Done</li>" +
+            document.getElementById('title').innerHTML += "<ul class='title container'><li class='titles Done'>Done</li>" +
                 "<li class='titles Tasks'>Tasks</li></ul>"
             data.forEach(function (result) {
-                list.innerHTML += "<form><li class='task' >" +
+                list.innerHTML += "<form><ul class='container'><li class='task' >" +
                     "<label class='container'><input id='completed' type='checkbox' name='completed' data-id='" + result.id + "'> <span class='checkmark'></span></label>" +
                     "<input id='task' type='text' name='task' value='" + result.task + "'>" +
-                    "<input id='update' type='submit' data-task='" + result.task + "' data-id='" + result.id + "' name='update' value='Update'> " +
-                    "<input id='delete' type='submit' name='delete' data-id='" + result.id + "' value='Delete'> " +
-                    "</li></form>"
+                    "<input class='button' id='update' type='submit' data-task='" + result.task + "' data-id='" + result.id + "' name='update' value='Update'> " +
+                    "<input class='button' id='delete' type='submit' name='delete' data-id='" + result.id + "' value='Delete'> " +
+                    "</li></ul></form>"
             })
 
-            list.innerHTML += "<form method='post' action=''><input type='text' name='task' id='newTask' placeholder='Add new task'>" +
+            list.innerHTML += "<form method='post' class='container'><input type='text' name='task' id='newTask' placeholder='Add new task'>" +
                 "<input type='submit' name='Add' id='add' value='Add'></form> "
 
             document.getElementById('add').addEventListener('click', function (e) {
