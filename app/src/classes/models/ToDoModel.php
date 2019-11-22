@@ -22,7 +22,7 @@ class ToDoModel
     }
 
     public function getAllCompletedToDos(){
-        $query = $this->db->prepare('SELECT `task` FROM `ToDo` WHERE `completed` = 1;');
+        $query = $this->db->prepare('SELECT `id`,`task`, `completed` FROM `ToDo` WHERE `completed` = 1;');
         $query->execute();
         $result = $query->fetchAll();
         return $result;
@@ -47,9 +47,9 @@ class ToDoModel
         $query->execute();
     }
 
-    public function restoreToDo( $id){
+    public function restoreToDo($id){
         $query = $this->db->prepare('UPDATE `ToDo` SET `completed` = 0 WHERE `id` = :id;');
-        $query->bindParam(':id', $id, PDO::PARAM_INT,3);
+        $query->bindParam(':id', $id, PDO::PARAM_INT,3 );
         $query->execute();
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use MarcsNameSpace\factories\RestoreToDoControllerFactory;
 use MarcsNameSpace\factories\ToDoModelFactory;
 use MarcsNameSpace\factories\HomePageControllerFactory;
 use MarcsNameSpace\factories\UpdateToDoControllerFactory;
@@ -8,6 +9,7 @@ use MarcsNameSpace\DB\DbConnection;
 use MarcsNameSpace\factories\GetAllToDoControllerFactory;
 use MarcsNameSpace\factories\AddToDoControllerFactory;
 use MarcsNameSpace\factories\CompleteToDoControllerFactory;
+use MarcsNameSpace\factories\GetAllCompletedToDoControllerFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -36,5 +38,6 @@ return function (App $app) {
     $container['DeleteToDoController'] = new DeleteToDoControllerFactory();
     $container['UpdateToDoController'] = new UpdateToDoControllerFactory();
     $container['CompleteToDoController'] = new CompleteToDoControllerFactory();
-
+    $container['GetAllCompletedToDoController'] = new GetAllCompletedToDoControllerFactory();
+    $container['RestoreToDoController'] = new RestoreToDoControllerFactory();
 };
