@@ -60,7 +60,7 @@ fetch(API_PATH + '/', {
                             },
                             body: JSON.stringify(request)})// YOUR DATA
                             .then(
-                                // location.reload()
+                                location.reload()
                             )
                     })
             })
@@ -141,8 +141,6 @@ fetch(API_PATH + '/completed', {
                     )
             })
         })
-
-
     })
 
 

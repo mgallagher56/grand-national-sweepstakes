@@ -36,6 +36,7 @@ input {
     box-shadow: none;
     margin: 10px;
     font-size: 2rem;
+    outline: none;
 }
 
 form {
