@@ -1,12 +1,12 @@
 html {
     font-size: 14px;
-    font-family: 'Courgette', cursive;
+    font-family: 'Homemade Apple', cursive;
 }
 
 body {
-    background-image: url("../img/bg1.jpeg");
-    background-size: cover;
-    background-repeat: repeat;
+    background-image: url("../img/background.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
 }
@@ -24,7 +24,7 @@ body {
 }
 
 input[type="text"] {
-    font-family: 'Courgette', cursive;
+    font-family: 'Homemade Apple', cursive;
 }
 
 input {
@@ -140,6 +140,11 @@ li {
     font-family: 'Permanent Marker', cursive;
 }
 
+.Done {
+    text-align: left;
+    width: 60px;
+}
+
 .Tasks {
     position: relative;
     width: 100px;
@@ -164,34 +169,31 @@ li {
 #update {
     position: relative;
     width: 150px;
-    margin: 10px 0;
+    margin: 0;
 }
 
 #delete {
     position: relative;
     width: 150px;
-    margin: 10px 0 0 20px;
+    margin: 0 0 0 20px;
 }
 
 .button {
     border: black 1px solid;
-    background-color: powderblue;
-    font-family: monospace;
-    border-radius: 5px;
+    background-color: dodgerblue;
 }
 
 #newTask {
     position: relative;
     border-bottom: black 1px solid;
-    width: 210px;
+    width: 250px;
     margin: 50px auto;
-    left: 21%;
-    background-color: RGBA(255,255,255,.5);
-
+    left: 20%;
 }
 
 #newTask input[type="text"] {
-    font-family: 'Courgette', cursive;
+    font-family: 'Homemade Apple', cursive;
+
 }
 
 #add {
@@ -203,6 +205,7 @@ li {
     opacity: 1;
     color: grey;
     font-family: monospace;
+    left: 20%;
 }
 
 

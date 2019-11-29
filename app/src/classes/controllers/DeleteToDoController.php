@@ -14,7 +14,8 @@ class  DeleteToDoController
     public function __invoke($request, $response, $args)
     {
         $id = $request->getParam('id');
+        $results = $this->ToDoModel->getAllToDos();
         $this->ToDoModel->deleteToDo($id);
-        return $response->withRedirect('/');
+        return $response->withJson($results, 200);
     }
 }

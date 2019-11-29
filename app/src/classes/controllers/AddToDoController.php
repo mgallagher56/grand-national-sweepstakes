@@ -16,6 +16,7 @@ class  AddToDoController
     {
         $task = $request->getParam('task');
         $this->ToDoModel->addToDo($task);
-        return $response->withRedirect('/', 200);
+        $results = $this->ToDoModel->getAllToDos();
+        return $response->withJson($results, 200);
     }
 }
