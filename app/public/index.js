@@ -23,7 +23,7 @@ fetch(API_PATH + '/', {
 
 
             list.innerHTML += "<form method='post' class='container'><input type='text' name='task' id='newTask' placeholder='Add new task'>" +
-                "<input type='submit' name='Add' id='add' value='Add'></form> "
+                "<input type='submit' name='Add' id='add' class='button' value='Add'></form> "
 
             document.getElementById('add').addEventListener('click', function (e) {
                 e.preventDefault()
