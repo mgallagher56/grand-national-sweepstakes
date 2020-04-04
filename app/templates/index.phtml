@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>To-Do App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Permanent+Marker&display=swap" rel="stylesheet">
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-        <link href='/css/style.css' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="index.js" defer></script>
-    </head>
-    <body id="body">
-    <h1 class="headline">To-Do List</h1>
-    <div id="title">
-    </div>
-    <div id="content" class="content">
-        <ul id="list">
-        </ul>
-    </div>
-    <div id="title2">
-    </div>
-    <div id="completedList">
-
-    </div>
-    </body>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>GrandNational</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link href='/css/style.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="index.js" defer></script>
+</head>
+<body id="body">
+<h1 class="headline">Grand National Sweepstakes</h1>
+<div id="title">
+    <?php if (!isset($_SESSION["selected"])) {
+        ?>
+        <div id="formHolder">
+            <form id="form" autocomplete="off">
+                <div class="form">
+                    <p class="name">Enter Name :</p>
+                    <input type="text" id="name" name="name" placeholder="Dustin Hoofman">
+                    <div id="error"></div>
+                    <input type="submit" id='submit' value="Enter Sweepstakes!">
+                </div>
+            </form>
+        </div>
+        <?php
+    } else {
+        ?>
+        <h3 class="selectedHorse">You've already got a horse <?php echo $_SESSION['name'] ?>. Don't be greedy!</h3>
+        <?php
+    }
+    ?>
+</div>
+<div id="content" class="content">
+    <ul id="list">
+    </ul>
+</div>
+</body>
 </html>

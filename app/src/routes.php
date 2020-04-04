@@ -8,11 +8,7 @@ return function (App $app) {
     $container = $app->getContainer();
 
     $app->get('/', 'HomePageController');
-    $app->get('/api/', 'GetAllToDoController');
-    $app->get('/api/completed', 'GetAllCompletedToDoController');
-    $app->post('/api/add', 'AddToDoController');
-    $app->post('/api/delete', 'DeleteToDoController');
-    $app->post('/api/update', 'UpdateToDoController');
-    $app->post('/api/complete', 'CompleteToDoController');
-    $app->post('/api/restore', 'RestoreToDoController');
+    $app->get('/api/', 'GetHorsesController');
+    $app->post('/api/update', 'AddNameToHorseController');
+
 };

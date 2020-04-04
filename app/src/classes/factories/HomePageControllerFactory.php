@@ -8,7 +8,7 @@ use Psr\Container\ContainerInterface;
 
 class HomePageControllerFactory
 {
-    public function __invoke(ContainerInterface $container) : HomePageController
+    public function __invoke(ContainerInterface $container)
     {
         $renderer = $container->get('renderer');
         return new HomePageController($renderer);

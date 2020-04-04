@@ -2,16 +2,16 @@
 
 namespace MarcsNameSpace\factories;
 
-use MarcsNameSpace\models\ToDoModel;
+use MarcsNameSpace\models\HorsesModel;
 use Psr\Container\ContainerInterface;
 
-class ToDoModelFactory
+class HorsesModelFactory
 {
     public function __invoke(ContainerInterface $container)
     {
         $db = $container->get('DbConnection');
         $db = $db->getDB();
-        return new ToDoModel($db);
+        return new HorsesModel($db);
     }
 }
 

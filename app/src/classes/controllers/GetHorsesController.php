@@ -3,18 +3,18 @@
 namespace MarcsNameSpace\controllers;
 
 
-class GetAllCompletedToDoController
+class GetHorsesController
 {
-    private $ToDoModel;
+    private $HorsesModel;
 
     public function __construct($ToDoModel)
     {
-        $this->ToDoModel = $ToDoModel;
+        $this->HorsesModel = $ToDoModel;
     }
 
     public function __invoke($request, $response, $args)
     {
-        $results = $this->ToDoModel->getAllCompletedToDos();
+        $results = $this->HorsesModel->getHorses();
         return $response->withJson($results, 200);
     }
 }

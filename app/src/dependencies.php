@@ -1,15 +1,10 @@
 <?php
 
-use MarcsNameSpace\factories\RestoreToDoControllerFactory;
-use MarcsNameSpace\factories\ToDoModelFactory;
-use MarcsNameSpace\factories\HomePageControllerFactory;
-use MarcsNameSpace\factories\UpdateToDoControllerFactory;
-use MarcsNameSpace\factories\DeleteToDoControllerFactory;
 use MarcsNameSpace\DB\DbConnection;
-use MarcsNameSpace\factories\GetAllToDoControllerFactory;
-use MarcsNameSpace\factories\AddToDoControllerFactory;
-use MarcsNameSpace\factories\CompleteToDoControllerFactory;
-use MarcsNameSpace\factories\GetAllCompletedToDoControllerFactory;
+use MarcsNameSpace\factories\AddNameToHorseControllerFactory;
+use MarcsNameSpace\factories\GetHorsesControllerFactory;
+use MarcsNameSpace\factories\HomePageControllerFactory;
+use MarcsNameSpace\factories\HorsesModelFactory;
 use Slim\App;
 
 return function (App $app) {
@@ -32,12 +27,7 @@ return function (App $app) {
 
     $container['DbConnection'] = new DbConnection();
     $container['HomePageController'] = new HomePageControllerFactory();
-    $container['ToDoModel'] = new ToDoModelFactory();
-    $container['GetAllToDoController'] = new GetAllToDoControllerFactory();
-    $container['AddToDoController'] = new AddToDoControllerFactory();
-    $container['DeleteToDoController'] = new DeleteToDoControllerFactory();
-    $container['UpdateToDoController'] = new UpdateToDoControllerFactory();
-    $container['CompleteToDoController'] = new CompleteToDoControllerFactory();
-    $container['GetAllCompletedToDoController'] = new GetAllCompletedToDoControllerFactory();
-    $container['RestoreToDoController'] = new RestoreToDoControllerFactory();
+    $container['HorsesModel'] = new HorsesModelFactory();
+    $container['GetHorsesController'] = new GetHorsesControllerFactory();
+    $container['AddNameToHorseController'] = new AddNameToHorseControllerFactory();
 };
