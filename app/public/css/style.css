@@ -43,10 +43,6 @@ h3 {
     text-align: center;
 }
 
-#completed {
-    position: relative;
-}
-
 .headline {
     margin: 0;
     padding: 0 0 0 0;
@@ -78,7 +74,6 @@ input {
 
 ul {
     padding: 0 0 0 10%;
-    margin: 0 12.5% 0 12.5%;
     overflow: auto;
     align-content: center;
 }
@@ -98,6 +93,8 @@ li {
     background-color: whitesmoke;
     list-style-type: none;
     height: 180px;
+    border: 3px black solid;
+    box-shadow: RGBA(0, 191, 255, .6) -8px 7px;
 }
 
 .titles {
@@ -111,9 +108,8 @@ li {
     display: none;
 }
 
-#task {
+#horse {
     position: relative;
-    left:10px;
     margin-top: 10px;
     padding: 10px 0 0 10px;
 }
@@ -132,6 +128,17 @@ li {
 @media only screen and (max-width: 1024px) {
     .container {
         width: 760px; }
+
+    .holder {
+        width: 25%;
+        min-width: 200px;
+    }
+
+    li {
+        height: 200px;
+        font-size: 12px;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -139,24 +146,18 @@ li {
         width: 660px;
     }
 
-    .holder {
-        width: 30%;
-    }
-
     body {
         background-position: center;
         height: 1080px; }
 
 
-
-    li {
-        height: 200px;
-    }
 }
 
 @media only screen and (max-width: 480px) {
     .container {
-        width: 320px; }
+        width: 320px;
+    }
+
 
 
 }
